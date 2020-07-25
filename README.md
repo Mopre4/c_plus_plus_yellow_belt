@@ -1,3 +1,2 @@
-[Основы разработки на C++: желтый пояс](https://www.coursera.org/learn/c-plus-plus-yellow)
-by Moscow Institute of Physics and Technology & Yandex& Yandex
-
+[РћСЃРЅРѕРІС‹ СЂР°Р·СЂР°Р±РѕС‚РєРё РЅР° C++: Р±РµР»С‹Р№ РїРѕСЏСЃ](https://www.coursera.org/learn/c-plus-plus-white)
+by Moscow Institute of Physics and Technology & Yandex
