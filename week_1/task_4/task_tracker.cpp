@@ -5,7 +5,7 @@
 using namespace std;
 
 // Перечислимый тип для статуса задачи
-/*
+
 enum class TaskStatus {
 	NEW,          // новая
 	IN_PROGRESS,  // в разработке
@@ -16,9 +16,8 @@ enum class TaskStatus {
 // Объявляем тип-синоним для map<TaskStatus, int>,
 // позволяющего хранить количество задач каждого статуса
 using TasksInfo = map<TaskStatus, int>;
-*/
+
 TasksInfo operator+(TasksInfo& lhs, TasksInfo& rhs) { // чтобы сложить новые и старые задачи
-	/**/
 	TasksInfo res;
 	res[TaskStatus::NEW] = lhs[TaskStatus::NEW] + rhs[TaskStatus::NEW];
 	res[TaskStatus::IN_PROGRESS] = lhs[TaskStatus::IN_PROGRESS] + rhs[TaskStatus::IN_PROGRESS];
@@ -58,12 +57,12 @@ public:
 		TasksInfo untouched_tasks = person_tasks[person];
 		TasksInfo updated_tasks;
 		while (task_count != 0) {
-			if (untouched_tasks[TaskStatus::NEW] != 0 and task_count > 0) {//если new не пуст AND TASK_COUNT > 0 мейби!
+			if (untouched_tasks[TaskStatus::NEW] != 0 and task_count > 0) {//если new не пуст AND TASK_COUNT > 0 
 				--untouched_tasks[TaskStatus::NEW]; // вычитаем единицу
 				++updated_tasks[TaskStatus::IN_PROGRESS]; // добавляем ее в обновленные задачи
 				--task_count; // вычитаем из таск каунта единицу
-			} // т.е если таск каунт все еще > 0 а в new уже пусто переходим в прогресс
-			else if (untouched_tasks[TaskStatus::IN_PROGRESS] != 0 and task_count > 0) {//избыточная>0
+			} // т.е если таск каунт все еще > 0, а в new уже пусто переходим в прогресс
+			else if (untouched_tasks[TaskStatus::IN_PROGRESS] != 0 and task_count > 0) {
 				--untouched_tasks[TaskStatus::IN_PROGRESS];
 				++updated_tasks[TaskStatus::TESTING];
 				--task_count;
@@ -78,9 +77,9 @@ public:
 			}
 		}
 
-
+		/*для получения полной статистики сложим обновленные и нетронутые задачи. Для этого перегузим оператор + */
 		person_tasks[person] = updated_tasks + untouched_tasks;
-
+		/*удаляем нули*/
 		zero_remove(person_tasks[person]);
 		zero_remove(updated_tasks);
 		zero_remove(untouched_tasks);
