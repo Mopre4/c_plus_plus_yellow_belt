@@ -160,6 +160,7 @@ main.cpp;
 Пример
 
 Ввод
+
 	Add 2017-01-01 New Year
 	Add 2017-03-08 Holiday
 	Add 2017-01-01 Holiday
@@ -169,6 +170,7 @@ main.cpp;
 	Add 2017-05-09 Holiday
 
 Вывод
+
 	No entries
 	2017-01-01 Holiday
 	2017-03-08 Holiday
@@ -176,6 +178,7 @@ main.cpp;
 Пример
 
 Ввод
+
 	Add 2017-11-21 Tuesday
 	Add 2017-11-20 Monday
 	Add 2017-11-21 Weekly meeting
